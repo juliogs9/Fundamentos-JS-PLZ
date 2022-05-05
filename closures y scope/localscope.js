@@ -1,0 +1,34 @@
+/*__________________________ >>>>>  SCOPE LOCAL <<<<<<< ______________________________ */
+
+// EN LA SIGUIENTE FUNCION SE DECLARA UNA >> VARIABLE DE NOMBRE hello <<< LA CUAL TINE UN SCOPE O ALCANCE LOCAL , ES DECIR SOLO EXISTE EN EL AMBITO DE DE LA FUNCION
+
+// PODRE ACCEDER AL VALOR DE ESTA VARIABLE SOLO DENTRO DE LA FUNCION
+// <<< LA VARIABLE hello SOLO EXISTE EN LA FUNCION FUERA DE AHI NO EXISTE Y POR TANTO NO PUEDO ACCEDER A SU INFORMACION FUERA DE LA FUNCION , POR ELLO EL PRIMER CONSOLE.LOG SI IMPRIME SU VALOR
+
+const helloWorld = () => {
+  const hello = "helow world";
+  console.log(hello); // >>>> ESTE CONSOLE SI FUNCIONA YA QUE ESTA DENTRO DE LA MISMA FUNCION O AMBITO DE LA VARIABLE A LA QUE QUIERO ACCEDER
+};
+
+helloWorld();
+console.log(hello); // ESTE CONSOLE NO FUNCIONA YA QUE NO ESTA DENTRO DE LA FUNCION DONDE SE ENCUENTRA LA VARIABLE A LA QUE QUIERO ACCEDER >>>> DARA UN ERROR <<<<<
+
+/*________________________ >>>>> SEGUNDO EJEMPLO DE LOCAL SCOPE <<<<< _________________
+
+>>> AMBITO LEXICO 
+______________________________________________________________________________________*/
+
+var scope = " i am global";
+
+const functionScope = () => {
+  var scope = "i am just local";
+
+  const func = () => {
+    // ESTA FUNCION ACCEDE A LA SEGUNDA VARIABLE scope POR QUE SE ENCUENTRA EN EL MISMO AMBITO <<<< SCOPE LOCAL  >>>> AUNQUE TIENE LA FACULTAD DE ACCEDER ALA VARIABLE DECLARADA EN EL AMBITO GLOBAL >>> IMPORTANTE !!!!!
+    return scope;
+  };
+  console.log(func()); // ESTE CONSOLE IMPRIME EL VALOR DE LA VARIABLE scope QUE ESTE DENTRO DE LA FUNCION
+};
+
+functionScope();
+console.log(scope); // ESTE CONSOLE IMPRIME EL VALOR DE LA VARIABLE scope QUE FUE DECLARA DE MANERA GLOBAL ES DECIR DE LA VARIABLE QUE ESTA FUERA DE LA FUNCION
