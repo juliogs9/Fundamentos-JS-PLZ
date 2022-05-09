@@ -1,3 +1,5 @@
+// __________________________________ EJEMPLOS DE CLOSURES _______________________
+
 const contadorMonedas = () => {
   var cochinito = 10;
   const ahorro = (domingos) => {
@@ -15,6 +17,7 @@ conteoAhorro(5);
 const moneyBox = () => {
   var saveCoins = 0;
   const countCoins = (coins) => {
+    // ESTA NUEVA FUNCION RECUERDA LA VARIBLE ANTES DECLARADA >> ARRIBA
     saveCoins += coins;
     console.log(saveCoins);
   };
